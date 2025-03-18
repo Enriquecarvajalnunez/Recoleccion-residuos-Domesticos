@@ -1,0 +1,6 @@
+@WebApi_Recoleccion_residuos_Domesticos_HostAddress = http://localhost:5121
+
+GET {{WebApi_Recoleccion_residuos_Domesticos_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
