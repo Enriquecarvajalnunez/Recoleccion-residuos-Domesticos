@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\WebApi-Recoleccion-residuos-Domesticos.props" />
+</Project>
