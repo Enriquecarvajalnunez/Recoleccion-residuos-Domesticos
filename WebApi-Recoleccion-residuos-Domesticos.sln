@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi-Recoleccion-residuos-Domesticos", "WebApi-Recoleccion-residuos-Domesticos\WebApi-Recoleccion-residuos-Domesticos.csproj", "{83EF82EF-667A-4F8D-ABB4-5C37B39A0730}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recoleccion.AccesoDatos", "Recoleccion.AccesoDatos\Recoleccion.AccesoDatos.csproj", "{C413837B-6F1A-46D6-AA83-668DC29CC645}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recoleccion.Models", "Recoleccion.Models\Recoleccion.Models.csproj", "{15025CBF-2E33-4FEF-B6F1-B88922635018}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{83EF82EF-667A-4F8D-ABB4-5C37B39A0730}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83EF82EF-667A-4F8D-ABB4-5C37B39A0730}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83EF82EF-667A-4F8D-ABB4-5C37B39A0730}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C413837B-6F1A-46D6-AA83-668DC29CC645}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C413837B-6F1A-46D6-AA83-668DC29CC645}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C413837B-6F1A-46D6-AA83-668DC29CC645}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C413837B-6F1A-46D6-AA83-668DC29CC645}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15025CBF-2E33-4FEF-B6F1-B88922635018}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15025CBF-2E33-4FEF-B6F1-B88922635018}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15025CBF-2E33-4FEF-B6F1-B88922635018}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15025CBF-2E33-4FEF-B6F1-B88922635018}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

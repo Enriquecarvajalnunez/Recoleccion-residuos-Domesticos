@@ -1,0 +1,12 @@
+D:\Desarrollos\.NET\WebApi-Recoleccion-residuos-Domesticos\Recoleccion.Models\bin\Debug\net8.0\Recoleccion.Models.deps.json
+D:\Desarrollos\.NET\WebApi-Recoleccion-residuos-Domesticos\Recoleccion.Models\bin\Debug\net8.0\Recoleccion.Models.dll
+D:\Desarrollos\.NET\WebApi-Recoleccion-residuos-Domesticos\Recoleccion.Models\bin\Debug\net8.0\Recoleccion.Models.pdb
+D:\Desarrollos\.NET\WebApi-Recoleccion-residuos-Domesticos\Recoleccion.Models\obj\Debug\net8.0\Recoleccion.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desarrollos\.NET\WebApi-Recoleccion-residuos-Domesticos\Recoleccion.Models\obj\Debug\net8.0\Recoleccion.Models.AssemblyInfoInputs.cache
+D:\Desarrollos\.NET\WebApi-Recoleccion-residuos-Domesticos\Recoleccion.Models\obj\Debug\net8.0\Recoleccion.Models.AssemblyInfo.cs
+D:\Desarrollos\.NET\WebApi-Recoleccion-residuos-Domesticos\Recoleccion.Models\obj\Debug\net8.0\Recoleccion.Models.csproj.CoreCompileInputs.cache
+D:\Desarrollos\.NET\WebApi-Recoleccion-residuos-Domesticos\Recoleccion.Models\obj\Debug\net8.0\Recoleccion.Models.sourcelink.json
+D:\Desarrollos\.NET\WebApi-Recoleccion-residuos-Domesticos\Recoleccion.Models\obj\Debug\net8.0\Recoleccion.Models.dll
+D:\Desarrollos\.NET\WebApi-Recoleccion-residuos-Domesticos\Recoleccion.Models\obj\Debug\net8.0\refint\Recoleccion.Models.dll
+D:\Desarrollos\.NET\WebApi-Recoleccion-residuos-Domesticos\Recoleccion.Models\obj\Debug\net8.0\Recoleccion.Models.pdb
+D:\Desarrollos\.NET\WebApi-Recoleccion-residuos-Domesticos\Recoleccion.Models\obj\Debug\net8.0\ref\Recoleccion.Models.dll

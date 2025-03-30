@@ -1,0 +1,41 @@
+# Excluir archivos de configuración y temporales de Visual Studio
+.vs/
+*.user
+*.suo
+*.ntvs*
+*.njsproj
+*.sln.docstates
+
+# Archivos de compilación
+bin/
+obj/
+out/
+*.dll
+*.exe
+*.pdb
+*.log
+*.cache
+*.vsidx
+
+# Configuraciones y archivos de usuario
+*.config
+*.settings
+*.db
+appsettings.json
+appsettings.Development.json
+secrets.json
+
+# Archivos de paquetes y dependencias
+packages/
+node_modules/
+wwwroot/lib/
+
+# Caché de Git y archivos generados
+*.pid
+*.lock
+*.cache
+*.DS_Store
+Thumbs.db
+
+# Archivos de Entity Framework Migrations
+Migrations/
