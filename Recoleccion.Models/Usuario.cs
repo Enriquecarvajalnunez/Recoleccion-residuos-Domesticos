@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
-namespace WebApi_Recoleccion_residuos_Domesticos.Models;
+namespace Recoleccion.Models;
 
-public partial class Usuario
+public class Usuario
 {
+    [Key]
     public int Idusuario { get; set; }
 
     public int? Idlocalidad { get; set; }
@@ -21,13 +23,13 @@ public partial class Usuario
 
     public string? Rol { get; set; }
 
-    public virtual ICollection<CanjePunto> CanjePuntos { get; set; } = new List<CanjePunto>();
+    //public virtual ICollection<CanjePunto> CanjePuntos { get; set; } = new List<CanjePunto>();
 
-    public virtual Localidad? IdlocalidadNavigation { get; set; }
+    //public virtual Localidad? IdlocalidadNavigation { get; set; }
 
-    public virtual ICollection<Notificacion> Notificacions { get; set; } = new List<Notificacion>();
+    //public virtual ICollection<Notificacion> Notificacions { get; set; } = new List<Notificacion>();
 
-    public virtual ICollection<PuntosUsuario> PuntosUsuarios { get; set; } = new List<PuntosUsuario>();
+    //public virtual ICollection<PuntosUsuario> PuntosUsuarios { get; set; } = new List<PuntosUsuario>();
 
-    public virtual ICollection<Recoleccion> Recoleccions { get; set; } = new List<Recoleccion>();
+    //public virtual ICollection<Recoleccion> Recoleccions { get; set; } = new List<Recoleccion>();
 }

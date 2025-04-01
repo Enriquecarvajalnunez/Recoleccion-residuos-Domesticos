@@ -23,5 +23,5 @@ public partial class Recoleccion
 
     public virtual Residuo IdresiduoNavigation { get; set; } = null!;
 
-    public virtual Usuario IdusuarioNavigation { get; set; } = null!;
+   // public virtual Usuario IdusuarioNavigation { get; set; } = null!;
 }

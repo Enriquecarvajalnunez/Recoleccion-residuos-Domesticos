@@ -5,119 +5,30 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Empleado/Lista": {
-      "get": {
-        "tags": [
-          "Empleado"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Empleado/Obtener/{id}": {
-      "get": {
-        "tags": [
-          "Empleado"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Empleado/Nuevo": {
+    "/api/Usuario/Nuevo": {
       "post": {
         "tags": [
-          "Empleado"
+          "Usuario"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Empleado"
+                "$ref": "#/components/schemas/Usuario"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Empleado"
+                "$ref": "#/components/schemas/Usuario"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Empleado"
+                "$ref": "#/components/schemas/Usuario"
               }
             }
           }
         },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Empleado/Editar": {
-      "post": {
-        "tags": [
-          "Empleado"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Empleado"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Empleado"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Empleado"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Empleado/Eliminar/{id}": {
-      "delete": {
-        "tags": [
-          "Empleado"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -167,18 +78,19 @@
   },
   "components": {
     "schemas": {
-      "Empleado": {
+      "Usuario": {
         "type": "object",
         "properties": {
-          "idEmpleado": {
+          "idusuario": {
             "type": "integer",
             "format": "int32"
           },
-          "identificacion": {
-            "type": "string",
+          "idlocalidad": {
+            "type": "integer",
+            "format": "int32",
             "nullable": true
           },
-          "nombres": {
+          "nombre": {
             "type": "string",
             "nullable": true
           },
@@ -186,11 +98,19 @@
             "type": "string",
             "nullable": true
           },
+          "telefono": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
           "direccion": {
             "type": "string",
             "nullable": true
           },
-          "telefono": {
+          "rol": {
             "type": "string",
             "nullable": true
           }

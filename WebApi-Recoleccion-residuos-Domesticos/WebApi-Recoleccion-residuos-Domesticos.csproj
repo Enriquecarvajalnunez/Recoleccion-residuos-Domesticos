@@ -22,7 +22,6 @@
     <Folder Include="Areas\Admin\Views\" />
     <Folder Include="Areas\Cliente\Controllers\" />
     <Folder Include="Areas\Cliente\Views\" />
-    <Folder Include="Models\" />
     <Folder Include="Areas\" />
   </ItemGroup>
 

@@ -1,5 +1,9 @@
-
+using WebApi_Recoleccion_residuos_Domesticos.Models;
+using Recoleccion.AccesoDatos;
 using Microsoft.EntityFrameworkCore;
+using Recoleccion.AccesoDatos.Data;
+using Recoleccion.AccesoDatos.Data.Repository.IRepository;
+using Recoleccion.AccesoDatos.Data.Repository;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +14,13 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddDbContext<RecoleccionResiduosContext>(options => {
+    options.UseSqlServer(builder.Configuration.GetConnectionString("CadenaSQL"));
+});
+
+//Agregar contenedor de trabajo al contenedor IoC de inyeccion de dependencia
+builder.Services.AddScoped<IContenedorTrabajo, ContenedorTrabajo>();
 
 var app = builder.Build();
 
