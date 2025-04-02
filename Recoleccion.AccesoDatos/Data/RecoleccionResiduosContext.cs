@@ -14,4 +14,5 @@ public class RecoleccionResiduosContext : IdentityDbContext
     }
 
     public DbSet<Usuario> usuario { get; set; }
+    public DbSet<Recoleccion> recoleccion { get; set; }
 }

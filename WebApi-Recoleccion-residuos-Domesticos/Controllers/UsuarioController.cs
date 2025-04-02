@@ -9,14 +9,12 @@ namespace WebApi_Recoleccion_residuos_Domesticos.Controllers
     public class UsuarioController : ControllerBase
     {
         private readonly IContenedorTrabajo _contenedorTrabajo;
-
+     
         public UsuarioController(IContenedorTrabajo contenedorTrabajo)
         {
             _contenedorTrabajo = contenedorTrabajo;
         }
      
-
-
         [HttpPost]
         [Route("Nuevo")]
         public IActionResult Create([FromBody]Usuario usuario)
@@ -27,6 +25,6 @@ namespace WebApi_Recoleccion_residuos_Domesticos.Controllers
                 _contenedorTrabajo.Save();                
             }
             return StatusCode(StatusCodes.Status200OK, new { mensaje = "ok" });
-        }
+        }       
     }
 }

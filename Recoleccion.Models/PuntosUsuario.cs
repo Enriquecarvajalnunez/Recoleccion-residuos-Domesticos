@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace WebApi_Recoleccion_residuos_Domesticos.Models;
+namespace Recoleccion.Models;
 
-public partial class PuntosUsuario
+public class PuntosUsuario
 {
     public int Idpuntos { get; set; }
 
