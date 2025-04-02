@@ -16,6 +16,7 @@ namespace WebApi_Recoleccion_residuos_Domesticos.Controllers
         }
      
 
+
         [HttpPost]
         [Route("Nuevo")]
         public IActionResult Create([FromBody]Usuario usuario)
