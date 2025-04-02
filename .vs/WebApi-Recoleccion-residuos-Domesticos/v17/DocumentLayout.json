@@ -1,12 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Desarrollos\\.NET\\WebApi-Recoleccion-residuos-Domesticos\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{83EF82EF-667A-4F8D-ABB4-5C37B39A0730}|WebApi-Recoleccion-residuos-Domesticos\\WebApi-Recoleccion-residuos-Domesticos.csproj|d:\\desarrollos\\.net\\webapi-recoleccion-residuos-domesticos\\webapi-recoleccion-residuos-domesticos\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83EF82EF-667A-4F8D-ABB4-5C37B39A0730}|WebApi-Recoleccion-residuos-Domesticos\\WebApi-Recoleccion-residuos-Domesticos.csproj|solutionrelative:webapi-recoleccion-residuos-domesticos\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -14,24 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UsuarioController.cs",
-              "DocumentMoniker": "D:\\Desarrollos\\.NET\\WebApi-Recoleccion-residuos-Domesticos\\WebApi-Recoleccion-residuos-Domesticos\\Controllers\\UsuarioController.cs",
-              "RelativeDocumentMoniker": "WebApi-Recoleccion-residuos-Domesticos\\Controllers\\UsuarioController.cs",
-              "ToolTip": "D:\\Desarrollos\\.NET\\WebApi-Recoleccion-residuos-Domesticos\\WebApi-Recoleccion-residuos-Domesticos\\Controllers\\UsuarioController.cs",
-              "RelativeToolTip": "WebApi-Recoleccion-residuos-Domesticos\\Controllers\\UsuarioController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T02:37:44.864Z",
-              "EditorCaption": ""
             }
           ]
         }
