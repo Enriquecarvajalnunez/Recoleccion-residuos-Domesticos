@@ -1,6 +1,10 @@
-
-using Microsoft.EntityFrameworkCore;
 using WebApi_Recoleccion_residuos_Domesticos.Models;
+using Recoleccion.AccesoDatos;
+using Microsoft.EntityFrameworkCore;
+using Recoleccion.AccesoDatos.Data;
+using Recoleccion.AccesoDatos.Data.Repository.IRepository;
+using Recoleccion.AccesoDatos.Data.Repository;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,11 +15,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//Asignamos la cadena de conexión
-builder.Services.AddDbContext<RecoleccionResiduosContext>(options =>
-{
+builder.Services.AddDbContext<RecoleccionResiduosContext>(options => {
     options.UseSqlServer(builder.Configuration.GetConnectionString("CadenaSQL"));
 });
+
+//Agregar contenedor de trabajo al contenedor IoC de inyeccion de dependencia
+builder.Services.AddScoped<IContenedorTrabajo, ContenedorTrabajo>();
 
 var app = builder.Build();
 

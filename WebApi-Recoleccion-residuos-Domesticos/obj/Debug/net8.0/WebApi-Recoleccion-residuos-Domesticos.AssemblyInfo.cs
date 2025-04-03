@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebApi-Recoleccion-residuos-Domesticos")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+470bb671ae7c31e45fd24ce6e6f90bde958fd24a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b7e2d70dbe3a6071ff26ed0c617666acd1e0c61")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebApi-Recoleccion-residuos-Domesticos")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebApi-Recoleccion-residuos-Domesticos")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

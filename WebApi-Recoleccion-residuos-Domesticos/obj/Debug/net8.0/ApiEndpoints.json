@@ -1,73 +1,15 @@
 [
   {
-    "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.EmpleadoController",
-    "Method": "Editar",
-    "RelativePath": "api/Empleado/Editar",
+    "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.UsuarioController",
+    "Method": "Create",
+    "RelativePath": "api/Usuario/Nuevo",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "objeto",
-        "Type": "WebApi_Recoleccion_residuos_Domesticos.Models.Empleado",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.EmpleadoController",
-    "Method": "Eliminar",
-    "RelativePath": "api/Empleado/Eliminar/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.EmpleadoController",
-    "Method": "Get",
-    "RelativePath": "api/Empleado/Lista",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.EmpleadoController",
-    "Method": "Nuevo",
-    "RelativePath": "api/Empleado/Nuevo",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "objeto",
-        "Type": "WebApi_Recoleccion_residuos_Domesticos.Models.Empleado",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.EmpleadoController",
-    "Method": "Get",
-    "RelativePath": "api/Empleado/Obtener/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
+        "Name": "usuario",
+        "Type": "Recoleccion.Models.Usuario",
         "IsRequired": true
       }
     ],
