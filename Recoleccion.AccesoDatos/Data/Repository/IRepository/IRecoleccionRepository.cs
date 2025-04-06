@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace Recoleccion.AccesoDatos.Data.Repository.IRepository
 {
-    public interface IRecoleccionRepository : IRepository<Recolectar>
+    public interface IRecoleccionRepository : IRepository<IRecoleccionRepository>
     {
-
-        
+        void Update(IRecoleccionRepository recoleccion);
     }
 }

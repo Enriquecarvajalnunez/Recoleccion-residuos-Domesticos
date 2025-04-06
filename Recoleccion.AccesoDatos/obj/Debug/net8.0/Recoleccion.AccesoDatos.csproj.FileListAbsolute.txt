@@ -16,3 +16,21 @@ D:\Desarrollos\.NET\WebApi-Recoleccion-residuos-Domesticos\Recoleccion.AccesoDat
 D:\Desarrollos\.NET\WebApi-Recoleccion-residuos-Domesticos\Recoleccion.AccesoDatos\obj\Debug\net8.0\Recoleccion.AccesoDatos.pdb
 D:\Desarrollos\.NET\WebApi-Recoleccion-residuos-Domesticos\Recoleccion.AccesoDatos\obj\Debug\net8.0\Recoleccion.AccesoDatos.genruntimeconfig.cache
 D:\Desarrollos\.NET\WebApi-Recoleccion-residuos-Domesticos\Recoleccion.AccesoDatos\obj\Debug\net8.0\ref\Recoleccion.AccesoDatos.dll
+D:\Estudio\Visual Studio Code 22\Recoleccion-residuos-Domesticos\Recoleccion.AccesoDatos\obj\Debug\net8.0\Recoleccion.AccesoDatos.csproj.AssemblyReference.cache
+D:\Estudio\Visual Studio Code 22\Recoleccion-residuos-Domesticos\Recoleccion.AccesoDatos\obj\Debug\net8.0\Recoleccion.AccesoDatos.GeneratedMSBuildEditorConfig.editorconfig
+D:\Estudio\Visual Studio Code 22\Recoleccion-residuos-Domesticos\Recoleccion.AccesoDatos\obj\Debug\net8.0\Recoleccion.AccesoDatos.AssemblyInfoInputs.cache
+D:\Estudio\Visual Studio Code 22\Recoleccion-residuos-Domesticos\Recoleccion.AccesoDatos\obj\Debug\net8.0\Recoleccion.AccesoDatos.AssemblyInfo.cs
+D:\Estudio\Visual Studio Code 22\Recoleccion-residuos-Domesticos\Recoleccion.AccesoDatos\obj\Debug\net8.0\Recoleccion.AccesoDatos.csproj.CoreCompileInputs.cache
+D:\Estudio\Visual Studio Code 22\Recoleccion-residuos-Domesticos\Recoleccion.AccesoDatos\obj\Debug\net8.0\Recoleccion.AccesoDatos.sourcelink.json
+D:\Estudio\Visual Studio Code 22\Recoleccion-residuos-Domesticos\Recoleccion.AccesoDatos\obj\Debug\net8.0\Recoleccion.AccesoDatos.dll
+D:\Estudio\Visual Studio Code 22\Recoleccion-residuos-Domesticos\Recoleccion.AccesoDatos\obj\Debug\net8.0\refint\Recoleccion.AccesoDatos.dll
+D:\Estudio\Visual Studio Code 22\Recoleccion-residuos-Domesticos\Recoleccion.AccesoDatos\obj\Debug\net8.0\Recoleccion.AccesoDatos.pdb
+D:\Estudio\Visual Studio Code 22\Recoleccion-residuos-Domesticos\Recoleccion.AccesoDatos\bin\Debug\net8.0\Recoleccion.AccesoDatos.deps.json
+D:\Estudio\Visual Studio Code 22\Recoleccion-residuos-Domesticos\Recoleccion.AccesoDatos\bin\Debug\net8.0\Recoleccion.AccesoDatos.runtimeconfig.json
+D:\Estudio\Visual Studio Code 22\Recoleccion-residuos-Domesticos\Recoleccion.AccesoDatos\bin\Debug\net8.0\Recoleccion.AccesoDatos.dll
+D:\Estudio\Visual Studio Code 22\Recoleccion-residuos-Domesticos\Recoleccion.AccesoDatos\bin\Debug\net8.0\Recoleccion.AccesoDatos.pdb
+D:\Estudio\Visual Studio Code 22\Recoleccion-residuos-Domesticos\Recoleccion.AccesoDatos\bin\Debug\net8.0\Recoleccion.Models.dll
+D:\Estudio\Visual Studio Code 22\Recoleccion-residuos-Domesticos\Recoleccion.AccesoDatos\bin\Debug\net8.0\Recoleccion.Models.pdb
+D:\Estudio\Visual Studio Code 22\Recoleccion-residuos-Domesticos\Recoleccion.AccesoDatos\obj\Debug\net8.0\Recolecc.F946BC63.Up2Date
+D:\Estudio\Visual Studio Code 22\Recoleccion-residuos-Domesticos\Recoleccion.AccesoDatos\obj\Debug\net8.0\Recoleccion.AccesoDatos.genruntimeconfig.cache
+D:\Estudio\Visual Studio Code 22\Recoleccion-residuos-Domesticos\Recoleccion.AccesoDatos\obj\Debug\net8.0\ref\Recoleccion.AccesoDatos.dll

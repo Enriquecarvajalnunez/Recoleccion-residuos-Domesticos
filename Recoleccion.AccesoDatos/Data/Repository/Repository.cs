@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Recoleccion.AccesoDatos.Data.Repository
 {
-    internal class Repository<T> : IRepository<T> where T : class
+    public class Repository<T> : IRepository<T> where T : class
     {
         //en esta clase se trabaja con el contexto
         protected readonly DbContext Context;

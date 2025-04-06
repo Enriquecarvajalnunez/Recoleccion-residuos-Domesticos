@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Recoleccion.Models
 {
-    public class Recolectar
+    public class Recoleccion
     {
         [Key]
         public int Idrecoleccion { get; set; }

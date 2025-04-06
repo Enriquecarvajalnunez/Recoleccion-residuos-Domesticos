@@ -19,7 +19,7 @@ namespace Recoleccion.AccesoDatos.Data.Repository
         //solo para el metodo de actualización se crea un repositorio adicional
         public void Update(Usuario usuario)
         {
-            var objDesdeDb = _db.usuario.FirstOrDefault(s => s.Idusuario == usuario.Idusuario);
+            var objDesdeDb = _db.Usuario.FirstOrDefault(s => s.Idusuario == usuario.Idusuario);
             //actualizamos los atributos del objeto, accde a la clase del modelo
             objDesdeDb.Idlocalidad = usuario.Idlocalidad;
             objDesdeDb.Nombre = usuario.Nombre;
