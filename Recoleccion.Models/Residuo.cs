@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace WebApi_Recoleccion_residuos_Domesticos.Models;
+namespace Recoleccion.Models;
 
 public partial class Residuo
 {

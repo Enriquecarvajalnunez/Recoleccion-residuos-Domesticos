@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Recoleccion.Models;
 
 public class PuntosUsuario
 {
+    [Key]
     public int Idpuntos { get; set; }
 
     public int Idusuario { get; set; }
@@ -15,5 +19,9 @@ public class PuntosUsuario
 
     public string? Estado { get; set; }
 
-   // public virtual Usuario IdusuarioNavigation { get; set; } = null!;
+    [ForeignKey("Idusuario")]
+    [JsonIgnore]
+    public Usuario? usuario { get; set; } = null!;
+
+    // public virtual Usuario IdusuarioNavigation { get; set; } = null!;
 }

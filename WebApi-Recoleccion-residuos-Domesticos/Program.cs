@@ -1,4 +1,3 @@
-using WebApi_Recoleccion_residuos_Domesticos.Models;
 using Recoleccion.AccesoDatos;
 using Microsoft.EntityFrameworkCore;
 using Recoleccion.AccesoDatos.Data;

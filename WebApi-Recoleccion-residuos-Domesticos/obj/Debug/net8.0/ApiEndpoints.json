@@ -290,6 +290,122 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.PuntosUsuarioController",
+    "Method": "Edit",
+    "RelativePath": "api/PuntosUsuario/Editar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "puntos",
+        "Type": "Recoleccion.Models.PuntosUsuario",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.PuntosUsuarioController",
+    "Method": "Delete",
+    "RelativePath": "api/PuntosUsuario/Eliminar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.PuntosUsuarioController",
+    "Method": "GetAll",
+    "RelativePath": "api/PuntosUsuario/Lista",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.PuntosUsuarioController",
+    "Method": "Create",
+    "RelativePath": "api/PuntosUsuario/Nuevo",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "puntos",
+        "Type": "Recoleccion.Models.PuntosUsuario",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.ResiduoController",
+    "Method": "Edit",
+    "RelativePath": "api/Residuo/Editar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "residuo",
+        "Type": "Recoleccion.Models.Residuo",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.ResiduoController",
+    "Method": "Delete",
+    "RelativePath": "api/Residuo/Eliminar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.ResiduoController",
+    "Method": "GetAll",
+    "RelativePath": "api/Residuo/Lista",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.ResiduoController",
+    "Method": "Create",
+    "RelativePath": "api/Residuo/Nuevo",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "residuo",
+        "Type": "Recoleccion.Models.Residuo",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.UsuarioController",
     "Method": "Edit",
     "RelativePath": "api/Usuario/Editar",

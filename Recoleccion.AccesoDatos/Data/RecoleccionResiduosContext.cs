@@ -19,5 +19,8 @@ public class RecoleccionResiduosContext : IdentityDbContext
     public DbSet<EmpresaRecolectora> empresaRecolectora { get; set; }
     public DbSet<Localidad> localidad { get; set; }
     public DbSet<Notificacion> notificacion { get; set; }
+    public DbSet<PuntosUsuario> puntosUsuario { get; set; }
+    public DbSet<Residuo> residuo { get; set; }
+    public DbSet<Recolectar> recolectar { get; set; }
 
 }

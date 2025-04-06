@@ -13,8 +13,10 @@ namespace Recoleccion.AccesoDatos.Data.Repository.IRepository
         IConfiguracionPuntoRepository ConfiguracionPunto { get; }
         IEmpresaRecolectoraRepository EmpresaRecolectora { get; }
         IlocalidadRespository Localidad { get; }
-
         INotificacionRepository Notificacion { get; }
+        IPuntosUsuarioRepository PuntosUsuario { get; }
+        IResiduoRepository Residuo { get; }
+        IRecolectarRepository Recolectar { get; }
 
         void Save();                
     }

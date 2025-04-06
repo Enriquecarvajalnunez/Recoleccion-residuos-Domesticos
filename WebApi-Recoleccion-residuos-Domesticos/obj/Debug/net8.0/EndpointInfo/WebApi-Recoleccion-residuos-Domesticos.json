@@ -485,6 +485,198 @@
         }
       }
     },
+    "/api/PuntosUsuario/Lista": {
+      "get": {
+        "tags": [
+          "PuntosUsuario"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/PuntosUsuario/Nuevo": {
+      "post": {
+        "tags": [
+          "PuntosUsuario"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PuntosUsuario"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PuntosUsuario"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PuntosUsuario"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/PuntosUsuario/Editar": {
+      "post": {
+        "tags": [
+          "PuntosUsuario"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PuntosUsuario"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PuntosUsuario"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PuntosUsuario"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/PuntosUsuario/Eliminar": {
+      "post": {
+        "tags": [
+          "PuntosUsuario"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Residuo/Lista": {
+      "get": {
+        "tags": [
+          "Residuo"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Residuo/Nuevo": {
+      "post": {
+        "tags": [
+          "Residuo"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Residuo"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Residuo"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Residuo"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Residuo/Editar": {
+      "post": {
+        "tags": [
+          "Residuo"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Residuo"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Residuo"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Residuo"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Residuo/Eliminar": {
+      "post": {
+        "tags": [
+          "Residuo"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Usuario/Lista": {
       "get": {
         "tags": [
@@ -721,6 +913,47 @@
           "fechaEnvio": {
             "type": "string",
             "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PuntosUsuario": {
+        "type": "object",
+        "properties": {
+          "idpuntos": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idusuario": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "puntos": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "fechaObtencion": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "estado": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Residuo": {
+        "type": "object",
+        "properties": {
+          "idresiduo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tipoResiduo": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
