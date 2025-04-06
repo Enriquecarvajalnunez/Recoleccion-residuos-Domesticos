@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
-namespace WebApi_Recoleccion_residuos_Domesticos.Models;
+namespace Recoleccion.Models;
 
 public partial class ConfiguracionPunto
 {
+    [Key]
     public int Idconfiguracion { get; set; }
 
     public decimal FactorConversion { get; set; }

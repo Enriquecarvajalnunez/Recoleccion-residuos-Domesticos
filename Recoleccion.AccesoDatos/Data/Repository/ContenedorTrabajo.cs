@@ -15,8 +15,12 @@ namespace Recoleccion.AccesoDatos.Data.Repository
             _db = db;
             //Aqui se llaman los demas repositorios para tenerlos encapsulados
             Usuario = new UsuarioRepository(_db);
+            CanjePunto = new CanjePuntoRepository(_db);
+            ConfiguracionPunto = new ConfiguracionPuntoRepository(db);
         }
         public IUsuarioRepository Usuario { get; private set; }
+        public ICanjePuntoRepository CanjePunto { get; private set; }
+        public IConfiguracionPuntoRepository ConfiguracionPunto { get; private set; }
 
         public void Dispose()
         {

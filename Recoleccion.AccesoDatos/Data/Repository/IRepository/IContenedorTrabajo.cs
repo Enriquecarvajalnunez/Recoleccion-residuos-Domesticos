@@ -9,6 +9,8 @@ namespace Recoleccion.AccesoDatos.Data.Repository.IRepository
     public interface IContenedorTrabajo : IDisposable
     {
         IUsuarioRepository Usuario { get; }
-        void Save();
+        ICanjePuntoRepository CanjePunto { get; }
+        IConfiguracionPuntoRepository ConfiguracionPunto { get; }
+        void Save();                
     }
 }
