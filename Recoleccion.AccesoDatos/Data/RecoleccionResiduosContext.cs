@@ -17,5 +17,6 @@ public class RecoleccionResiduosContext : IdentityDbContext
     public DbSet<CanjePunto> canjePuntos { get; set; }
     public DbSet<ConfiguracionPunto> configuracionPuntos { get; set; }
     public DbSet<EmpresaRecolectora> empresaRecolectora { get; set; }
+    public DbSet<Localidad> localidad { get; set; }
 
 }

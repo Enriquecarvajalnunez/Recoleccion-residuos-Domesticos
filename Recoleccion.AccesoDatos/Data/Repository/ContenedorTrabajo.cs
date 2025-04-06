@@ -1,4 +1,5 @@
 ﻿using Recoleccion.AccesoDatos.Data.Repository.IRepository;
+using Recoleccion.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,12 +19,13 @@ namespace Recoleccion.AccesoDatos.Data.Repository
             CanjePunto = new CanjePuntoRepository(_db);
             ConfiguracionPunto = new ConfiguracionPuntoRepository(db);
             EmpresaRecolectora = new EmpresaRecolectoraRepository(_db);
+            Localidad = new LocalidadRespository(_db);
         }
         public IUsuarioRepository Usuario { get; private set; }
         public ICanjePuntoRepository CanjePunto { get; private set; }
         public IConfiguracionPuntoRepository ConfiguracionPunto { get; private set; }
         public IEmpresaRecolectoraRepository EmpresaRecolectora { get; private set; }
-       
+        public IlocalidadRespository Localidad { get; private set; }
 
         public void Dispose()
         {

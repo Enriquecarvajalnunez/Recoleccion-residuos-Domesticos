@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
-namespace WebApi_Recoleccion_residuos_Domesticos.Models;
+namespace Recoleccion.Models;
 
 public partial class Localidad
 {
+    [Key]
     public int Idlocalidad { get; set; }
 
     public string Nombre { get; set; } = null!;
