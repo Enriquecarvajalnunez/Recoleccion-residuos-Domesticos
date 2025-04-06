@@ -20,12 +20,15 @@ namespace Recoleccion.AccesoDatos.Data.Repository
             ConfiguracionPunto = new ConfiguracionPuntoRepository(db);
             EmpresaRecolectora = new EmpresaRecolectoraRepository(_db);
             Localidad = new LocalidadRespository(_db);
+            Notificacion = new NotificacionRespository(db);
         }
         public IUsuarioRepository Usuario { get; private set; }
         public ICanjePuntoRepository CanjePunto { get; private set; }
         public IConfiguracionPuntoRepository ConfiguracionPunto { get; private set; }
         public IEmpresaRecolectoraRepository EmpresaRecolectora { get; private set; }
         public IlocalidadRespository Localidad { get; private set; }
+
+        public INotificacionRepository Notificacion { get; private set; }
 
         public void Dispose()
         {

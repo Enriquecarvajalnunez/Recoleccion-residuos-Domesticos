@@ -232,6 +232,64 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.NotificacionController",
+    "Method": "Edit",
+    "RelativePath": "api/Notificacion/Editar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "notifica",
+        "Type": "Recoleccion.Models.Notificacion",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.NotificacionController",
+    "Method": "Delete",
+    "RelativePath": "api/Notificacion/Eliminar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.NotificacionController",
+    "Method": "GetAll",
+    "RelativePath": "api/Notificacion/Lista",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.NotificacionController",
+    "Method": "Create",
+    "RelativePath": "api/Notificacion/Nuevo",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "notifica",
+        "Type": "Recoleccion.Models.Notificacion",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.UsuarioController",
     "Method": "Edit",
     "RelativePath": "api/Usuario/Editar",
