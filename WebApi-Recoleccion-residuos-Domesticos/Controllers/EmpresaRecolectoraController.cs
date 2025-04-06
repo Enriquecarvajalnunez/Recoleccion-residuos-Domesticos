@@ -6,11 +6,11 @@ namespace WebApi_Recoleccion_residuos_Domesticos.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CanjePuntoController : ControllerBase
+    public class EmpresaRecolectoraController : ControllerBase
     {
         private readonly IContenedorTrabajo _contenedorTrabajo;
 
-        public CanjePuntoController(IContenedorTrabajo contenedorTrabajo)
+        public EmpresaRecolectoraController(IContenedorTrabajo contenedorTrabajo)
         {
             _contenedorTrabajo = contenedorTrabajo;            
         }
@@ -19,37 +19,38 @@ namespace WebApi_Recoleccion_residuos_Domesticos.Controllers
         [Route("Lista")]
         public IActionResult GetAll()
         {
-            var ListaCanjePuntos = _contenedorTrabajo.CanjePunto.GetAll();
-            return StatusCode(StatusCodes.Status200OK, ListaCanjePuntos);
+            var ListaEmpresaRecolectoras = _contenedorTrabajo.EmpresaRecolectora.GetAll();
+            return StatusCode(StatusCodes.Status200OK, ListaEmpresaRecolectoras);
         }
 
         [HttpPost]
         [Route("Nuevo")]
-        public IActionResult Create([FromBody] CanjePunto canjePunto)
+        public IActionResult Create([FromBody] EmpresaRecolectora EmpRecolect)
         {
-            if (canjePunto == null) 
+            if (EmpRecolect == null) 
             {
                 return BadRequest("Datos inválidos");
-            }      
+            }
+         
 
             if (ModelState.IsValid)
             {
-                _contenedorTrabajo.CanjePunto.Add(canjePunto);
+                _contenedorTrabajo.EmpresaRecolectora.Add(EmpRecolect);
                 _contenedorTrabajo.Save();
             }
-            return StatusCode(StatusCodes.Status200OK, new { mensaje = "canje Punto Creado correctamente" });
+            return StatusCode(StatusCodes.Status200OK, new { mensaje = "Empresa Recolectora Creada correctamente" });
         }
 
         [HttpPost]
         [Route("Editar")]
-        public IActionResult Edit(CanjePunto canjePunto)
+        public IActionResult Edit(EmpresaRecolectora EmpRecolect)
         {
             if (ModelState.IsValid)
             {
-                _contenedorTrabajo.CanjePunto.Update(canjePunto);
+                _contenedorTrabajo.EmpresaRecolectora.Update(EmpRecolect);
                 _contenedorTrabajo.Save();
             }
-            return StatusCode(StatusCodes.Status200OK, new { mensaje = "CanjePunto Editado" });
+            return StatusCode(StatusCodes.Status200OK, new { mensaje = "Empresa Editado" });
         }
 
 
@@ -57,15 +58,15 @@ namespace WebApi_Recoleccion_residuos_Domesticos.Controllers
         [Route("Eliminar")]
         public IActionResult Delete(int id)
         {
-            var objFromBD = _contenedorTrabajo.CanjePunto.Get(id);
+            var objFromBD = _contenedorTrabajo.EmpresaRecolectora.Get(id);
             if (objFromBD == null)
             {
                 return StatusCode(StatusCodes.Status404NotFound);
             }
-            _contenedorTrabajo.CanjePunto.Remove(objFromBD);
+            _contenedorTrabajo.EmpresaRecolectora.Remove(objFromBD);
             _contenedorTrabajo.Save();
 
-            return StatusCode(StatusCodes.Status200OK, new { mensaje = "CanjePunto eliminado" });
+            return StatusCode(StatusCodes.Status200OK, new { mensaje = "Empresa eliminada" });
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
+namespace Recoleccion.Models;
 
-namespace WebApi_Recoleccion_residuos_Domesticos.Models;
+using System.ComponentModel.DataAnnotations;
 
 public partial class EmpresaRecolectora
 {

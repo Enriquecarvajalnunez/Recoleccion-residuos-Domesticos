@@ -197,6 +197,102 @@
         }
       }
     },
+    "/api/EmpresaRecolectora/Lista": {
+      "get": {
+        "tags": [
+          "EmpresaRecolectora"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/EmpresaRecolectora/Nuevo": {
+      "post": {
+        "tags": [
+          "EmpresaRecolectora"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmpresaRecolectora"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmpresaRecolectora"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmpresaRecolectora"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/EmpresaRecolectora/Editar": {
+      "post": {
+        "tags": [
+          "EmpresaRecolectora"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmpresaRecolectora"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmpresaRecolectora"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmpresaRecolectora"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/EmpresaRecolectora/Eliminar": {
+      "post": {
+        "tags": [
+          "EmpresaRecolectora"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Usuario/Lista": {
       "get": {
         "tags": [
@@ -378,6 +474,24 @@
           "ultimaActualizacion": {
             "type": "string",
             "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EmpresaRecolectora": {
+        "type": "object",
+        "properties": {
+          "idempresa": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "tipoResiduo": {
+            "type": "string",
             "nullable": true
           }
         },

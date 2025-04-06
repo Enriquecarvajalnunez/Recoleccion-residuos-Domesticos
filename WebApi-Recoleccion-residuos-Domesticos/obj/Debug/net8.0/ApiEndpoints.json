@@ -116,6 +116,64 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.EmpresaRecolectoraController",
+    "Method": "Edit",
+    "RelativePath": "api/EmpresaRecolectora/Editar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "EmpRecolect",
+        "Type": "Recoleccion.Models.EmpresaRecolectora",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.EmpresaRecolectoraController",
+    "Method": "Delete",
+    "RelativePath": "api/EmpresaRecolectora/Eliminar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.EmpresaRecolectoraController",
+    "Method": "GetAll",
+    "RelativePath": "api/EmpresaRecolectora/Lista",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.EmpresaRecolectoraController",
+    "Method": "Create",
+    "RelativePath": "api/EmpresaRecolectora/Nuevo",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "EmpRecolect",
+        "Type": "Recoleccion.Models.EmpresaRecolectora",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.UsuarioController",
     "Method": "Edit",
     "RelativePath": "api/Usuario/Editar",

@@ -11,6 +11,7 @@ namespace Recoleccion.AccesoDatos.Data.Repository.IRepository
         IUsuarioRepository Usuario { get; }
         ICanjePuntoRepository CanjePunto { get; }
         IConfiguracionPuntoRepository ConfiguracionPunto { get; }
+        IEmpresaRecolectoraRepository EmpresaRecolectora { get; }
         void Save();                
     }
 }

@@ -17,10 +17,13 @@ namespace Recoleccion.AccesoDatos.Data.Repository
             Usuario = new UsuarioRepository(_db);
             CanjePunto = new CanjePuntoRepository(_db);
             ConfiguracionPunto = new ConfiguracionPuntoRepository(db);
+            EmpresaRecolectora = new EmpresaRecolectoraRepository(_db);
         }
         public IUsuarioRepository Usuario { get; private set; }
         public ICanjePuntoRepository CanjePunto { get; private set; }
         public IConfiguracionPuntoRepository ConfiguracionPunto { get; private set; }
+        public IEmpresaRecolectoraRepository EmpresaRecolectora { get; private set; }
+       
 
         public void Dispose()
         {
