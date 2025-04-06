@@ -581,6 +581,102 @@
         }
       }
     },
+    "/api/Recolectar/Lista": {
+      "get": {
+        "tags": [
+          "Recolectar"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Recolectar/Nuevo": {
+      "post": {
+        "tags": [
+          "Recolectar"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Recolectar"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Recolectar"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Recolectar"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Recolectar/Editar": {
+      "post": {
+        "tags": [
+          "Recolectar"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Recolectar"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Recolectar"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Recolectar"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Recolectar/Eliminar": {
+      "post": {
+        "tags": [
+          "Recolectar"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Residuo/Lista": {
       "get": {
         "tags": [
@@ -936,6 +1032,41 @@
           "fechaObtencion": {
             "type": "string",
             "format": "date-time"
+          },
+          "estado": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Recolectar": {
+        "type": "object",
+        "properties": {
+          "idrecoleccion": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idusuario": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idempresa": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idresiduo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fechaRecoleccion": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "pesoKg": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
           },
           "estado": {
             "type": "string",

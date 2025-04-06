@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Recoleccion.Models;
 
@@ -22,6 +24,10 @@ public class Usuario
     public string? Direccion { get; set; }
 
     public string? Rol { get; set; }
+
+    [ForeignKey("Idlocalidad")]
+    [JsonIgnore]
+    public Localidad? localidad { get; set; }
 
     //public virtual ICollection<CanjePunto> CanjePuntos { get; set; } = new List<CanjePunto>();
 

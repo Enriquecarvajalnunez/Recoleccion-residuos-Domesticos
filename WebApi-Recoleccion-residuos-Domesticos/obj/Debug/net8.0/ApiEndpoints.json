@@ -348,6 +348,64 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.RecolectarController",
+    "Method": "Edit",
+    "RelativePath": "api/Recolectar/Editar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "recolectar",
+        "Type": "Recoleccion.Models.Recolectar",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.RecolectarController",
+    "Method": "Delete",
+    "RelativePath": "api/Recolectar/Eliminar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.RecolectarController",
+    "Method": "GetAll",
+    "RelativePath": "api/Recolectar/Lista",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.RecolectarController",
+    "Method": "Create",
+    "RelativePath": "api/Recolectar/Nuevo",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "recolectar",
+        "Type": "Recoleccion.Models.Recolectar",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.ResiduoController",
     "Method": "Edit",
     "RelativePath": "api/Residuo/Editar",
