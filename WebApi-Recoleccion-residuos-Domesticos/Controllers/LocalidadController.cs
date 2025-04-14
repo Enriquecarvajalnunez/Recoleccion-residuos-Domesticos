@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Recoleccion.AccesoDatos.Data.Repository.IRepository;
-using Recoleccion.Models;
-using WebApi_Recoleccion_residuos_Domesticos.Models;
+using ModelsRecolectar;
 
 namespace WebApi_Recoleccion_residuos_Domesticos.Controllers
 {
@@ -50,14 +49,20 @@ namespace WebApi_Recoleccion_residuos_Domesticos.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            var localidad = _contenedorTrabajo.Localidad.GetFirstOrDefault(l => l.Idlocalidad == id);
+            var localidad = _contenedorTrabajo.Localidad.GetFirstOrDefault(l => l.IDLocalidad == id);
             if (localidad != null)
             {
                 _contenedorTrabajo.Localidad.Remove(localidad);
                 _contenedorTrabajo.Save();
                 return Ok(new { mensaje = "Localidad eliminada correctamente" });
             }
-            return NotFound(new { mensaje = "Localidad no encontrada" });
+            return NotFound(new { mensaje = $"Localidad no encontrada" });
         }
     }
 }
+
+// GetAll: Con el recuperamos todos los registros de la tabla.
+// GetByld: Con el obtenemos un registro especifico por su id.
+// Create: Creamos un nuevo registro en la tabla.
+// Update: Actualizamos un registro existente en la tabla.
+// Delete: Eliminamos un registro especifico de la tabla.

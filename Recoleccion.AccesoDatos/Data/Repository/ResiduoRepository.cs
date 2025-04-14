@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Recoleccion.AccesoDatos.Data.Repository.IRepository;
-using Recoleccion.Models;
-using WebApi_Recoleccion_residuos_Domesticos.Models;
+﻿using Recoleccion.AccesoDatos.Data.Repository.IRepository;
+using ModelsRecolectar;
+using Recoleccion.AccesoDatos.Data;
 
 
 namespace Recoleccion.AccesoDatos.Data.Repository
@@ -20,10 +15,12 @@ namespace Recoleccion.AccesoDatos.Data.Repository
         //solo para el metodo de actualización se crea un repositorio adicional
         public void Update(Residuo residuo)
         {
-            var objDesdeDb = _db.Residuo.FirstOrDefault(s => s.Idresiduo == residuo.Idresiduo);
-            //actualizamos los atributos del objeto, accedemos a la clase del modelo
+            var objDesdeDb = _db.Residuos.FirstOrDefault(s => s.IDResiduo == residuo.IDResiduo);
+            if (objDesdeDb == null)
+            {
+                throw new KeyNotFoundException($"No se encontro un Residuo con ID {residuo.IDResiduo}");
+            }
             objDesdeDb.TipoResiduo = residuo.TipoResiduo;
-            objDesdeDb.Idresiduo = residuo.Idresiduo;
             _db.SaveChanges();
         }
     }

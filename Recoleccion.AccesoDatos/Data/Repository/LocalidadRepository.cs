@@ -1,6 +1,6 @@
 ﻿using Recoleccion.AccesoDatos.Data.Repository.IRepository;
-using Recoleccion.Models;
-using WebApi_Recoleccion_residuos_Domesticos.Models;
+using ModelsRecolectar;
+using Recoleccion.AccesoDatos.Data;
 
 namespace Recoleccion.AccesoDatos.Data.Repository
 {
@@ -15,13 +15,13 @@ namespace Recoleccion.AccesoDatos.Data.Repository
 
         public void Update(Localidad localidad)
         {
-            var objDesdeDb = _db.Localidad.FirstOrDefault(l => l.Idlocalidad == localidad.Idlocalidad);
-            if (objDesdeDb != null)
+            var objDesdeDb = _db.Localidades.FirstOrDefault(l => l.IDLocalidad == localidad.IDLocalidad);
+            if (objDesdeDb == null)
             {
-                objDesdeDb.Nombre = localidad.Nombre;
-                objDesdeDb.Idlocalidad = localidad.Idlocalidad;
-                _db.SaveChanges();
+                throw new KeyNotFoundException($"No se encontró la localidad con ID {localidad.IDLocalidad} en la base de datos.");
             }
+            objDesdeDb.Nombre = localidad.Nombre;
+            _db.SaveChanges();
         }
     }
 }

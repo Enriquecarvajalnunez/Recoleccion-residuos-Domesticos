@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Recoleccion.AccesoDatos.Data.Repository.IRepository;
-using Recoleccion.Models;
+using ModelsRecolectar;
 
 namespace WebApi_Recoleccion_residuos_Domesticos.Controllers
 {
@@ -40,3 +40,9 @@ namespace WebApi_Recoleccion_residuos_Domesticos.Controllers
         }
     }
 }
+
+// GetAll: Con el recuperamos todos los registros de la tabla.
+// GetByld: Con el obtenemos un registro especifico por su id.
+// Create: Creamos un nuevo registro en la tabla.
+// Update: Actualizamos un registro existente en la tabla.
+// Delete: Eliminamos un registro especifico de la tabla.

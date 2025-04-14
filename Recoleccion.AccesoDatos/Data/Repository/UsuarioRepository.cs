@@ -1,14 +1,10 @@
 ﻿using Recoleccion.AccesoDatos.Data.Repository.IRepository;
-using Recoleccion.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ModelsRecolectar;
+using Recoleccion.AccesoDatos.Data;
 
 namespace Recoleccion.AccesoDatos.Data.Repository
 {
-    internal class UsuarioRepository : Repository<Usuario>, IUsuarioRepository
+    public class UsuarioRepository : Repository<Usuario>, IUsuarioRepository
     {
         private readonly RecoleccionResiduosContext _db;
 
@@ -16,12 +12,21 @@ namespace Recoleccion.AccesoDatos.Data.Repository
         {
             _db = db;
         }
+        public void Add(Usuario usuario)
+        {
+            _db.Usuarios.Add(usuario);
+        }
         //solo para el metodo de actualización se crea un repositorio adicional
         public void Update(Usuario usuario)
         {
-            var objDesdeDb = _db.Usuario.FirstOrDefault(s => s.Idusuario == usuario.Idusuario);
-            //actualizamos los atributos del objeto, accde a la clase del modelo
-            objDesdeDb.Idlocalidad = usuario.Idlocalidad;
+            var objDesdeDb = _db.Usuarios.FirstOrDefault(s => s.IDUsuario == usuario.IDUsuario);
+
+            if (objDesdeDb == null)
+            {
+                throw new KeyNotFoundException($"No se encontro un Usuario con ID {usuario.IDUsuario}");
+            }
+
+            objDesdeDb.IDLocalidad = usuario.IDLocalidad;
             objDesdeDb.Nombre = usuario.Nombre;
             objDesdeDb.Apellidos = usuario.Apellidos;
             objDesdeDb.Telefono = usuario.Telefono;

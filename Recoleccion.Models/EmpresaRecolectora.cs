@@ -1,16 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using Recoleccion.Models;
+using System.ComponentModel.DataAnnotations;
 
-namespace WebApi_Recoleccion_residuos_Domesticos.Models;
+namespace ModelsRecolectar;
 
 public partial class EmpresaRecolectora
 {
-    public int Idempresa { get; set; }
+    [Key]
+    public int IDEmpresa { get; set; }
 
+    [Required]
+    [StringLength(100)]
     public string Nombre { get; set; } = null!;
 
+    [Required]
+    [StringLength(50)]
     public string TipoResiduo { get; set; } = null!;
 
-    public virtual ICollection<Recoleccion.Models.Recoleccion> Recoleccions { get; set; } = new List<Recoleccion.Models.Recoleccion>();
+    public virtual ICollection<Recolectar> Recolectars { get; set; } = new List<Recolectar>();
 }

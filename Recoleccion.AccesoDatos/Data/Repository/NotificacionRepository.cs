@@ -1,5 +1,6 @@
 ﻿using Recoleccion.AccesoDatos.Data.Repository.IRepository;
-using Recoleccion.Models;
+using ModelsRecolectar;
+using Recoleccion.AccesoDatos.Data;
 
 namespace Recoleccion.AccesoDatos.Data.Repository
 {
@@ -14,15 +15,15 @@ namespace Recoleccion.AccesoDatos.Data.Repository
 
         public void Update(Notificacion notificacion)
         {
-            var objDesdeDb = _db.Notificacion.FirstOrDefault(n => n.Idnotificacion == notificacion.Idnotificacion);
-            if (objDesdeDb != null)
+            var objDesdeDb = _db.Notificaciones.FirstOrDefault(n => n.IDNotificacion == notificacion.IDNotificacion);
+            if (objDesdeDb == null)
             {
-                objDesdeDb.Mensaje = notificacion.Mensaje;
-                objDesdeDb.FechaEnvio = notificacion.FechaEnvio;
-                objDesdeDb.Idusuario = notificacion.Idusuario;
-                objDesdeDb.Idnotificacion = notificacion.Idnotificacion;
-                _db.SaveChanges();
+                throw new KeyNotFoundException($"No se encontro la notificacion con el ID {notificacion.IDNotificacion}. Asegurate de que el ID es correcto y que la notificacion existe en la base de datos");
             }
+            objDesdeDb.Mensaje = notificacion.Mensaje;
+            objDesdeDb.FechaEnvio = notificacion.FechaEnvio;
+            objDesdeDb.IDUsuario = notificacion.IDUsuario;
+            _db.SaveChanges();
         }
     }
 }

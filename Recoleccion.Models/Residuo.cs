@@ -3,14 +3,20 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 
-namespace WebApi_Recoleccion_residuos_Domesticos.Models;
-
+namespace ModelsRecolectar;
+public enum TipoResiduoEnum
+{
+    Orgánico,
+    InorgánicoReciclable,
+    Peligroso,
+}
 public partial class Residuo
 {
     [Key]
-    public int Idresiduo { get; set; }
+    public int IDResiduo { get; set; }
 
-    public string TipoResiduo { get; set; } = null!;
+    [Required]
+    public TipoResiduoEnum TipoResiduo { get; set; }
 
-    //public virtual ICollection<Recoleccion> Recoleccions { get; set; } = new List<Recoleccion>();
+    public virtual ICollection<Recolectar> Recolectars { get; set; } = new List<Recolectar>();
 }

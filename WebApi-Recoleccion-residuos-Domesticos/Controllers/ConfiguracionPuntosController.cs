@@ -1,28 +1,27 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Recoleccion.AccesoDatos.Data.Repository.IRepository;
-using Recoleccion.Models;
-using WebApi_Recoleccion_residuos_Domesticos.Models;
+using ModelsRecolectar;
 
 namespace WebApi.Recoleccion.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ConfiguracionPuntoController : ControllerBase
+    public class ConfiguracionPuntosController : ControllerBase
     {
         private readonly IContenedorTrabajo _contenedorTrabajo;
 
-        public ConfiguracionPuntoController(IContenedorTrabajo contenedorTrabajo)
+        public ConfiguracionPuntosController(IContenedorTrabajo contenedorTrabajo)
         {
             _contenedorTrabajo = contenedorTrabajo;
         }
 
         [HttpPost]
         [Route("Nuevo")]
-        public IActionResult Create([FromBody] ConfiguracionPunto configuracionPunto)
+        public IActionResult Create([FromBody] ConfiguracionPuntos configuracionPunto)
         {
             if (ModelState.IsValid)
             {
-                _contenedorTrabajo.ConfiguracionPunto.Add(configuracionPunto);
+                _contenedorTrabajo.ConfiguracionPuntos.Add(configuracionPunto);
                 _contenedorTrabajo.Save();
             }
             return StatusCode(StatusCodes.Status200OK, new { mensaje = "ok" });

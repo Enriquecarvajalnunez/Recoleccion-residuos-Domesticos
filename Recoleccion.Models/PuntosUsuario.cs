@@ -1,19 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Recoleccion.Models;
+namespace ModelsRecolectar;
 
+public enum EstadoPuntosEnum
+{
+    Acumulado,
+    Canjeado
+}
 public class PuntosUsuario
 {
-    public int Idpuntos { get; set; }
+    [Key]
+    public int IDPuntos { get; set; }
 
-    public int Idusuario { get; set; }
+    [Required]
+    [ForeignKey("Usuario")]
+    public int IDUsuario { get; set; }
 
-    public int? Puntos { get; set; }
+    [Required]
+    [Range(0, int.MaxValue)]
+    public int Puntos { get; set; }
 
-    public DateTime FechaObtencion { get; set; }
+    [Required]
+    public DateTime FechaObtencion { get; set; } = DateTime.Now;
 
-    public string? Estado { get; set; }
+    [Required]
+    public EstadoPuntosEnum Estado { get; set; }
 
-   // public virtual Usuario IdusuarioNavigation { get; set; } = null!;
+    public virtual Usuario Usuario { get; set; } = null!;
 }

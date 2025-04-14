@@ -1,17 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Recoleccion.Models;
+namespace ModelsRecolectar;
 
 public class Notificacion
 {
-    public int Idnotificacion { get; set; }
+    [Key]
+    public int IDNotificacion { get; set; }
 
-    public int Idusuario { get; set; }
+    [Required]
+    [ForeignKey("Usuario")]
+    public int IDUsuario { get; set; }
 
+    [Required]
+    [StringLength(255)]
     public string Mensaje { get; set; } = null!;
 
-    public DateTime FechaEnvio { get; set; }
+    public DateTime FechaEnvio { get; set; } = DateTime.Now;
 
-   // public virtual Usuario IdusuarioNavigation { get; set; } = null!;
+    public virtual Usuario Usuario { get; set; } = null!;
 }

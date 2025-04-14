@@ -1,10 +1,5 @@
 ﻿using Recoleccion.AccesoDatos.Data.Repository.IRepository;
-using Recoleccion.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ModelsRecolectar;
 
 namespace Recoleccion.AccesoDatos.Data.Repository
 {
@@ -15,19 +10,26 @@ namespace Recoleccion.AccesoDatos.Data.Repository
         {
             _db = db;
             //Aqui se llaman los demas repositorios para tenerlos encapsulados
-            Usuario = new UsuarioRepository(_db);
-            ConfiguracionPunto = new ConfiguracionPuntoRepository(_db);
-            PuntosUsuario = new PuntosUsuarioRepository(_db);
-            Residuo = new ResiduoRepository(_db);
+            EmpresaRecolectora = new EmpresaRecolectoraRepository(_db);
             Localidad = new LocalidadRepository(_db);
+            Residuo = new ResiduoRepository(_db);
+            ConfiguracionPuntos = new ConfiguracionPuntosRepository(_db);
+            Usuario = new UsuarioRepository(_db);
+            PuntosUsuario = new PuntosUsuarioRepository(_db);
             Notificacion = new NotificacionRepository(_db);
+            CanjePuntos = new CanjePuntosRepository(_db);
+            Recolectar = new RecolectarRepository(_db);
+
         }
-        public IUsuarioRepository Usuario { get; private set; }
-        public IConfiguracionPuntoRepository ConfiguracionPunto { get; private set; }
-        public IPuntosUsuarioRepository PuntosUsuario { get; private set; }
-        public IResiduoRepository Residuo { get; private set; }
+        public IEmpresaRecolectoraRepository EmpresaRecolectora { get; private set; }
         public ILocalidadRepository Localidad { get; private set; }
+        public IResiduoRepository Residuo { get; private set; }
+        public IConfiguracionPuntosRepository ConfiguracionPuntos { get; private set; }
+        public IUsuarioRepository Usuario { get; private set; }
+        public IPuntosUsuarioRepository PuntosUsuario { get; private set; } 
         public INotificacionRepository Notificacion { get; private set; }
+        public ICanjePuntosRepository CanjePuntos { get; private set; }
+        public IRecolectarRepository Recolectar { get; private set; }
 
         public void Dispose()
         {
@@ -36,7 +38,15 @@ namespace Recoleccion.AccesoDatos.Data.Repository
 
         public void Save()
         {
-            _db.SaveChanges();
+            try
+            {
+                _db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                // Manejamos excepciones
+                throw new Exception("Ocurrio un error al guardar los cambios", ex);
+            }
         }
     }
 }

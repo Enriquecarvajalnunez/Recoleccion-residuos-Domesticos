@@ -1,35 +1,55 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Recoleccion.Models;
+namespace ModelsRecolectar;
 
+public enum RolEnum
+{
+    Administrador,
+    Usuario
+}
 public class Usuario
+
 {
     [Key]
-    public int Idusuario { get; set; }
+    public int IDUsuario { get; set; }
 
-    public int? Idlocalidad { get; set; }
+    [Required]
+    [ForeignKey("Localidad")]
+    public int IDLocalidad { get; set; }
 
+    [Required]
+    [StringLength(100)]
     public string Nombre { get; set; } = null!;
 
+    [Required]
+    [StringLength(100)]
     public string Apellidos { get; set; } = null!;
 
+    [Required]
+    [StringLength(15)]
     public string Telefono { get; set; } = null!;
 
-    public string? Email { get; set; }
+    [Required]
+    [StringLength(100)]
+    public string Email { get; set; } = null!;
 
-    public string? Direccion { get; set; }
+    [Required]
+    [StringLength(100)]
+    public string Direccion { get; set; } = null!;
 
-    public string? Rol { get; set; }
+    [Required]
+    public RolEnum Rol { get; set; }
 
-    //public virtual ICollection<CanjePunto> CanjePuntos { get; set; } = new List<CanjePunto>();
+    public virtual Localidad Localidad { get; set; } = null!;
 
-    //public virtual Localidad? IdlocalidadNavigation { get; set; }
+    public virtual ICollection<Notificacion> Notificacions { get; set; } = new List<Notificacion>();
 
-    //public virtual ICollection<Notificacion> Notificacions { get; set; } = new List<Notificacion>();
+    public virtual ICollection<PuntosUsuario> PuntosUsuarios { get; set; } = new List<PuntosUsuario>();
 
-    //public virtual ICollection<PuntosUsuario> PuntosUsuarios { get; set; } = new List<PuntosUsuario>();
+    public virtual ICollection<Recolectar> Recolectars { get; set; } = new List<Recolectar>();
 
-    //public virtual ICollection<Recoleccion> Recoleccions { get; set; } = new List<Recoleccion>();
+    public virtual ICollection<CanjePuntos> CanjePuntos { get; set; } = new List<CanjePuntos>();
 }

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Recoleccion.AccesoDatos.Data;
 using Recoleccion.AccesoDatos.Data.Repository.IRepository;
-using Recoleccion.Models;
+using ModelsRecolectar;
 
 namespace Recoleccion.AccesoDatos.Data.Repository
 {
@@ -18,17 +14,18 @@ namespace Recoleccion.AccesoDatos.Data.Repository
         //Agregamos metodo para actualizar el registro de PuntosUsuario
         public void Update(PuntosUsuario puntosUsuario)
         {
-            var objDesdeDb = _db.PuntosUsuario.FirstOrDefault(s => s.Idpuntos == puntosUsuario.Idpuntos);
-            if (objDesdeDb != null)
+            var objDesdeDb = _db.PuntosUsuarios.FirstOrDefault(s => s.IDPuntos == puntosUsuario.IDPuntos);
+            if (objDesdeDb == null)
             {
-                //Actualizamos las propiedades
-                objDesdeDb.Puntos = puntosUsuario.Puntos;
-                objDesdeDb.FechaObtencion = puntosUsuario.FechaObtencion;
-                objDesdeDb.Estado = puntosUsuario.Estado;
-                objDesdeDb.Idusuario = puntosUsuario.Idusuario;
-                objDesdeDb.Idpuntos = puntosUsuario.Idpuntos;
+                throw new KeyNotFoundException($"No se encontró el registro de PuntosUsuario con ID {puntosUsuario.IDPuntos}");
             }
-            _db.SaveChanges(); //Guardamos los cambios en la base de datos
+            //Actualizamos las propiedades
+            objDesdeDb.Puntos = puntosUsuario.Puntos;
+            objDesdeDb.FechaObtencion = puntosUsuario.FechaObtencion;
+            objDesdeDb.Estado = puntosUsuario.Estado;
+            objDesdeDb.IDUsuario = puntosUsuario.IDUsuario;
+            //Guardamos los cambios en la base de datos
+            _db.SaveChanges(); 
         }
     }
 }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WebApi_Recoleccion_residuos_Domesticos.Models;
-using Recoleccion.Models;
+﻿using ModelsRecolectar;
 
 namespace Recoleccion.AccesoDatos.Data.Repository.IRepository
 {
