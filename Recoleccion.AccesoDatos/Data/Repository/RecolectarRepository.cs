@@ -11,9 +11,10 @@ namespace Recoleccion.AccesoDatos.Data.Repository
         {
             _db = db;
         }
+
         public void Update(Recolectar recolectar)
         {
-            var objDesdeDb = _db.Recolecciones.SingleOrDefault(s => s.IDRecoleccion == recolectar.IDRecoleccion);
+            var objDesdeDb = _db.Recolectar.SingleOrDefault(s => s.IDRecoleccion == recolectar.IDRecoleccion);
             if (objDesdeDb == null)
             {
                 throw new KeyNotFoundException($"No se encontro el ID de Recolectar {recolectar.IDRecoleccion}");
@@ -25,6 +26,15 @@ namespace Recoleccion.AccesoDatos.Data.Repository
             objDesdeDb.PesoKg = recolectar.PesoKg;
             objDesdeDb.Estado = recolectar.Estado;
             _db.SaveChanges();
+        }
+
+        // Definimos un metodo para obtener todas las solicitudes de recolección.
+        public IEnumerable<Recolectar> GetAllSolicitudRecoleccion()
+        {
+            // Suponemos que 'Programada' es el estado que representa una solicitud de recolección.
+            return _db.Recolectar
+                .Where(r => r.Estado == EstadoRecolectarEnum.Programada)
+                .ToList();
         }
     }
 }

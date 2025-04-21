@@ -12,7 +12,7 @@ namespace Recoleccion.AccesoDatos.Data.Repository
         {
             _db = db;
         }
-        public void Add(Usuario usuario)
+        public new void Add(Usuario usuario)
         {
             _db.Usuarios.Add(usuario);
         }

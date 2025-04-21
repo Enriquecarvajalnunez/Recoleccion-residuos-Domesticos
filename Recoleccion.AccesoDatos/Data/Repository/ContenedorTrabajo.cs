@@ -19,6 +19,7 @@ namespace Recoleccion.AccesoDatos.Data.Repository
             Notificacion = new NotificacionRepository(_db);
             CanjePuntos = new CanjePuntosRepository(_db);
             Recolectar = new RecolectarRepository(_db);
+            SubTipoResiduo = new SubTipoResiduoRepository(_db);
 
         }
         public IEmpresaRecolectoraRepository EmpresaRecolectora { get; private set; }
@@ -30,10 +31,21 @@ namespace Recoleccion.AccesoDatos.Data.Repository
         public INotificacionRepository Notificacion { get; private set; }
         public ICanjePuntosRepository CanjePuntos { get; private set; }
         public IRecolectarRepository Recolectar { get; private set; }
+        public ISubTipoResiduoRepository SubTipoResiduo { get; private set; }
 
         public void Dispose()
         {
             _db.Dispose();
+        }
+       
+        public IEnumerable<Localidad> ObtenerTodasLasLocalidades()
+        {
+            return _db.Localidades.ToList();
+        }
+
+        public IEnumerable<SubTipoResiduo> ObtenerTodosLosSubTipoResiduos()
+        {
+            return _db.SubTipoResiduos.ToList();
         }
 
         public void Save()

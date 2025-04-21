@@ -1,6 +1,10 @@
 ﻿using Recoleccion.AccesoDatos.Data.Repository.IRepository;
 using ModelsRecolectar;
 using Recoleccion.AccesoDatos.Data;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
 
 
 namespace Recoleccion.AccesoDatos.Data.Repository
@@ -12,16 +16,11 @@ namespace Recoleccion.AccesoDatos.Data.Repository
         {
             _db = db;
         }
-        //solo para el metodo de actualización se crea un repositorio adicional
-        public void Update(Residuo residuo)
+
+        public IEnumerable<TipoResiduoEnum> ObtenerTodosLosTiposResiduos()
         {
-            var objDesdeDb = _db.Residuos.FirstOrDefault(s => s.IDResiduo == residuo.IDResiduo);
-            if (objDesdeDb == null)
-            {
-                throw new KeyNotFoundException($"No se encontro un Residuo con ID {residuo.IDResiduo}");
-            }
-            objDesdeDb.TipoResiduo = residuo.TipoResiduo;
-            _db.SaveChanges();
+            // Este método obtiene todos los tipos de residuo.
+            return Enum.GetValues(typeof(TipoResiduoEnum)).Cast<TipoResiduoEnum>();
         }
     }
 }

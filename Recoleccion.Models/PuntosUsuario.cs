@@ -15,7 +15,6 @@ public class PuntosUsuario
     [Key]
     public int IDPuntos { get; set; }
 
-    [Required]
     [ForeignKey("Usuario")]
     public int IDUsuario { get; set; }
 
@@ -27,6 +26,7 @@ public class PuntosUsuario
     public DateTime FechaObtencion { get; set; } = DateTime.Now;
 
     [Required]
+    [Column(TypeName = "varchar(20)")]
     public EstadoPuntosEnum Estado { get; set; }
 
     public virtual Usuario Usuario { get; set; } = null!;

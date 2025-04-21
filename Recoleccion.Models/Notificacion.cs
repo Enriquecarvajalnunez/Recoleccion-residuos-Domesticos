@@ -10,7 +10,6 @@ public class Notificacion
     [Key]
     public int IDNotificacion { get; set; }
 
-    [Required]
     [ForeignKey("Usuario")]
     public int IDUsuario { get; set; }
 

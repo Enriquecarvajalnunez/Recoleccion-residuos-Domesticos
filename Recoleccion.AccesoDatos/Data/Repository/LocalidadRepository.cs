@@ -12,16 +12,11 @@ namespace Recoleccion.AccesoDatos.Data.Repository
         {
             _db = db;
         }
-
-        public void Update(Localidad localidad)
+        
+        public IEnumerable<Localidad> ObtenerTodasLasLocalidades()
         {
-            var objDesdeDb = _db.Localidades.FirstOrDefault(l => l.IDLocalidad == localidad.IDLocalidad);
-            if (objDesdeDb == null)
-            {
-                throw new KeyNotFoundException($"No se encontró la localidad con ID {localidad.IDLocalidad} en la base de datos.");
-            }
-            objDesdeDb.Nombre = localidad.Nombre;
-            _db.SaveChanges();
+            // Este método obtiene todas las localidades de la base de datos.
+            return _db.Localidades.ToList();
         }
     }
 }

@@ -25,7 +25,7 @@ namespace Recoleccion.AccesoDatos.Data.Repository
             objDesdeDb.UltimaActualizacion = DateTime.Now;
             _db.SaveChanges(); //Guardamos los cambios en la base de datos
         }
-        public void Add(ConfiguracionPuntos configuracionPuntos)
+        public new void Add(ConfiguracionPuntos configuracionPuntos)
         {
             _db.ConfiguracionPuntos.Add(configuracionPuntos);
             _db.SaveChanges(); //Guardamos los cambios en la base de datos

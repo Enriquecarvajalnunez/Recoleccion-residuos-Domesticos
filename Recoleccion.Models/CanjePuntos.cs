@@ -10,7 +10,6 @@ public partial class CanjePuntos
     [Key]
     public int IDCanje { get; set; }
 
-    [Required]
     [ForeignKey("Usuario")]
     public int IDUsuario { get; set; }
 
@@ -20,6 +19,7 @@ public partial class CanjePuntos
 
     [Required]
     [StringLength(100)]
+    [RegularExpression(@"\S+", ErrorMessage = "La tienda no puede estar vacia o solo contener espacios")]
     public string Tienda { get; set; } = null!;
 
     [Required]

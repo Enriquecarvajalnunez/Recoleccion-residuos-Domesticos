@@ -1,4 +1,5 @@
-﻿
+﻿using ModelsRecolectar;
+
 namespace Recoleccion.AccesoDatos.Data.Repository.IRepository
 {
     public interface IContenedorTrabajo : IDisposable
@@ -12,7 +13,10 @@ namespace Recoleccion.AccesoDatos.Data.Repository.IRepository
         INotificacionRepository Notificacion { get; }
         ICanjePuntosRepository CanjePuntos { get; }
         IRecolectarRepository Recolectar { get; }
+        ISubTipoResiduoRepository SubTipoResiduo { get; }
 
+        IEnumerable<Localidad> ObtenerTodasLasLocalidades();
+        IEnumerable<SubTipoResiduo> ObtenerTodosLosSubTipoResiduos();
         void Save();
     }
 }

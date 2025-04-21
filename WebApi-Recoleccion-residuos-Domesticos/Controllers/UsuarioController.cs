@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Recoleccion.AccesoDatos.Data.Repository.IRepository;
 using ModelsRecolectar;
+using Microsoft.AspNetCore.Cors;
 
 namespace WebApi_Recoleccion_residuos_Domesticos.Controllers
 {    
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("PermitirTodo")]
     public class UsuarioController : ControllerBase
     {
         private readonly IContenedorTrabajo _contenedorTrabajo;
@@ -15,12 +17,14 @@ namespace WebApi_Recoleccion_residuos_Domesticos.Controllers
             _contenedorTrabajo = contenedorTrabajo;
         }
 
+
         [HttpGet]
         public IActionResult GetAll()
         {
             var usuarios = _contenedorTrabajo.Usuario.GetAll();
             return Ok(usuarios);
         }
+
 
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
@@ -33,25 +37,43 @@ namespace WebApi_Recoleccion_residuos_Domesticos.Controllers
             return Ok(usuario);
         }
 
+
         [HttpPost]
-        [Route("api/Usuario/Nuevo")]
+        [Route("Nuevo")]
         public IActionResult CrearUsuario([FromBody]Usuario usuario)
         {
-            if (usuario == null)
+
+            if (usuario == null || string.IsNullOrEmpty(usuario.Nombre) || usuario.IDLocalidad == 0)
             {
-                return BadRequest("Los datos del usuario son invalidos");
+                return BadRequest("Datos inválidos, verifica que todos los campos obligatorios estén completos");
             }
+
+            var localidadValida = _contenedorTrabajo.Localidad.GetFirstOrDefault(l => l.IDLocalidad == usuario.IDLocalidad);
+            if (localidadValida == null)
+            {
+                return BadRequest("La localidad seleccionada no es válida");
+            }
+
+            // Agregamos el Console.WriteLine para depuraracion
+            Console.WriteLine($"Usuario a guardar: Nombre={usuario.Nombre}, Email={usuario.Email}, Localidad={usuario.IDLocalidad}, Rol={usuario.Rol}");
+
             try
             {
                 _contenedorTrabajo.Usuario.Add(usuario);
                 _contenedorTrabajo.Save();
-                return CreatedAtAction(nameof(CrearUsuario), new { id = usuario.IDUsuario}, usuario);
+                if (usuario.Localidad != null)
+                {
+                    usuario.Localidad.Usuarios = null;// Asegurarte de no incluir la lista de Usuarios. - Evitar la referencia circular
+                }
+                return CreatedAtAction(nameof(GetById), new { id = usuario.IDUsuario },
+                    new { mensaje = "El usuario se agrego de forma correcta.", usuario});
             }
             catch (Exception ex)
             {
                 return StatusCode(500, $"Error interno: {ex.Message}");
-            }
+            }          
         }
+
 
         [HttpPut("{id}")]
         public IActionResult Update(int id, [FromBody] Usuario usuario)
@@ -73,6 +95,7 @@ namespace WebApi_Recoleccion_residuos_Domesticos.Controllers
 
             return Ok(new { mensaje = "El Usuario ha sido actualizado correctamente" });
         }
+
 
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)

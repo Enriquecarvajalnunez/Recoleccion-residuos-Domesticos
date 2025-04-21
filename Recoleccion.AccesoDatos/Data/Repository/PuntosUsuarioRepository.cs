@@ -11,6 +11,25 @@ namespace Recoleccion.AccesoDatos.Data.Repository
         {
             _db = db;
         }
+
+        // Agregamos metodo para obtener todos los puntos de usuario.
+        public IEnumerable<PuntosUsuario> ObtenerPorUsuario(int idUsuario)
+        {
+            //Obtenemos los puntos de usuario por ID de usuario
+            return _db.PuntosUsuarios
+                .Where(p => p.IDUsuario == idUsuario).
+                ToList();
+        }
+
+        // Agregamos metodo para obtener el total acumulado de puntos por ID de usuario.
+        public int ObtenerTotalAcumulado (int idUsuario)
+        {
+            //Obtenemos el total acumulado de puntos por ID de usuario
+            return _db.PuntosUsuarios
+                .Where(p => p.IDUsuario == idUsuario && p.Estado == EstadoPuntosEnum.Acumulado)
+                .Sum(p => p.Puntos);
+        }
+
         //Agregamos metodo para actualizar el registro de PuntosUsuario
         public void Update(PuntosUsuario puntosUsuario)
         {

@@ -2,54 +2,42 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace ModelsRecolectar;
 
-public enum RolEnum
-{
-    Administrador,
-    Usuario
-}
 public class Usuario
 
 {
     [Key]
     public int IDUsuario { get; set; }
 
-    [Required]
-    [ForeignKey("Localidad")]
+    [ForeignKey(nameof(Localidad))]
     public int IDLocalidad { get; set; }
 
-    [Required]
-    [StringLength(100)]
-    public string Nombre { get; set; } = null!;
+    [JsonIgnore]
+    public Localidad? Localidad { get; set; }
 
     [Required]
     [StringLength(100)]
-    public string Apellidos { get; set; } = null!;
+    public string? Nombre { get; set; }
+
+    [Required]
+    [StringLength(100)]
+    public string? Apellidos { get; set; }
 
     [Required]
     [StringLength(15)]
-    public string Telefono { get; set; } = null!;
+    public string? Telefono { get; set; }
 
     [Required]
     [StringLength(100)]
-    public string Email { get; set; } = null!;
+    public string? Email { get; set; }
 
     [Required]
     [StringLength(100)]
-    public string Direccion { get; set; } = null!;
+    public string? Direccion { get; set; }
 
     [Required]
-    public RolEnum Rol { get; set; }
-
-    public virtual Localidad Localidad { get; set; } = null!;
-
-    public virtual ICollection<Notificacion> Notificacions { get; set; } = new List<Notificacion>();
-
-    public virtual ICollection<PuntosUsuario> PuntosUsuarios { get; set; } = new List<PuntosUsuario>();
-
-    public virtual ICollection<Recolectar> Recolectars { get; set; } = new List<Recolectar>();
-
-    public virtual ICollection<CanjePuntos> CanjePuntos { get; set; } = new List<CanjePuntos>();
+    public string? Rol { get; set; }
 }

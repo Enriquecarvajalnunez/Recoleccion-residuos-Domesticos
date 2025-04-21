@@ -6,20 +6,19 @@ using Recoleccion.AccesoDatos.Data.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddControllers();
+// Obtenempos la cadena de conexion desde el archivo appsettings.json
+var connectionString = builder.Configuration.GetConnectionString("CadenaSQL");
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-builder.Services.AddDbContext<RecoleccionResiduosContext>(options => {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("CadenaSQL"));
+// Configuramos el DbContext para usar SQL Server
+builder.Services.AddDbContext<RecoleccionResiduosContext>(options => 
+{
+    options.UseSqlServer(connectionString);
 });
 
-//Agregar contenedor de trabajo al contenedor IoC de inyeccion de dependencia
+// Registramos servicios antes de construir la aplicacion.
 builder.Services.AddScoped<IContenedorTrabajo, ContenedorTrabajo>();
 
+// Configuramos los CORS.
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("PermitirTodo", policy =>
@@ -30,19 +29,28 @@ builder.Services.AddCors(options =>
     });
 });
 
+
+// Agregamos controladores y configuramos Swagger.
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
+    });
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(); // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configuramos el entorno de desarrollo. - Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-app.UseAuthorization();
-
-app.MapControllers();
-
 app.UseCors("PermitirTodo");
+app.UseAuthorization();
+app.MapControllers();
 
 app.Run();

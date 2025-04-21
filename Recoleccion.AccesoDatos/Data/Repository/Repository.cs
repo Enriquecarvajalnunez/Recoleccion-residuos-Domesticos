@@ -31,7 +31,7 @@ namespace Recoleccion.AccesoDatos.Data.Repository
         //Obtiene el registro por su ID
         public T Get(int id)
         {
-            return dbSet.Find(id);
+            return dbSet.Find(id)!;
         }
 
         public IEnumerable<T> GetAll(Expression<Func<T, bool>>? filter = null, Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null, string? includeProperties = null)
@@ -87,13 +87,13 @@ namespace Recoleccion.AccesoDatos.Data.Repository
                     query = query.Include(includeProperty);
                 }
             }
-            return query.FirstOrDefault();
+            return query.FirstOrDefault()!;
         }
 
         //Remueve registro por su ID
         public void Remove(int id)
         {
-            T entityToRemove = dbSet.Find(id);
+            T entityToRemove = dbSet.Find(id)!;
         }
 
         //Remueve registro por su identidad
