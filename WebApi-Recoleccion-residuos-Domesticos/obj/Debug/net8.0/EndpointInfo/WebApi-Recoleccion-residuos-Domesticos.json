@@ -677,6 +677,41 @@
         }
       }
     },
+    "/api/Reporte/empresas/pdf": {
+      "get": {
+        "tags": [
+          "Reporte"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Reporte/empresa/{id}/pdf": {
+      "get": {
+        "tags": [
+          "Reporte"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Residuo/Lista": {
       "get": {
         "tags": [

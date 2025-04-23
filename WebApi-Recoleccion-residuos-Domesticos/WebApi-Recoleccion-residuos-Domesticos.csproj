@@ -27,6 +27,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Recoleccion.AccesoDatos\Recoleccion.AccesoDatos.csproj" />
+    <ProjectReference Include="..\Recoleccion.Services\Recoleccion.Services.csproj" />
   </ItemGroup>
 
 </Project>

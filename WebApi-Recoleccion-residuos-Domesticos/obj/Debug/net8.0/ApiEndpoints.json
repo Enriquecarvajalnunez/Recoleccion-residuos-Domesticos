@@ -406,6 +406,32 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.ReporteController",
+    "Method": "ObtenerReporteEmpresaPorId",
+    "RelativePath": "api/Reporte/empresa/{id}/pdf",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.ReporteController",
+    "Method": "ObtenerReporteEmpresas",
+    "RelativePath": "api/Reporte/empresas/pdf",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.ResiduoController",
     "Method": "Edit",
     "RelativePath": "api/Residuo/Editar",

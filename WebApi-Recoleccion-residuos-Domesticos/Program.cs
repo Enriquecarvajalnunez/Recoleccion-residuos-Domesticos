@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Recoleccion.AccesoDatos.Data;
 using Recoleccion.AccesoDatos.Data.Repository.IRepository;
 using Recoleccion.AccesoDatos.Data.Repository;
+using Recoleccion.Services.Interfaces;
+using Recoleccion.Services.Implementaciones;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,8 +22,12 @@ builder.Services.AddDbContext<RecoleccionResiduosContext>(options => {
 
 //Agregar contenedor de trabajo al contenedor IoC de inyeccion de dependencia
 builder.Services.AddScoped<IContenedorTrabajo, ContenedorTrabajo>();
+//registramos el servicio de reporteria
+builder.Services.AddScoped<IReporteService, ReporteService>();
+
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
