@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Recoleccion.AccesoDatos")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+de650e8bcfe7cb65de5897b8675af2b367a2dc31")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2e76e8981cea77b94e846a2e6934a154c50bb8db")]
 [assembly: System.Reflection.AssemblyProductAttribute("Recoleccion.AccesoDatos")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Recoleccion.AccesoDatos")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

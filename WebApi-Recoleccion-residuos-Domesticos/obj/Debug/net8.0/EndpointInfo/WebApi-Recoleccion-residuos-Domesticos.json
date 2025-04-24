@@ -712,6 +712,18 @@
         }
       }
     },
+    "/api/Reporte/reporte-recolectas-detallado": {
+      "get": {
+        "tags": [
+          "Reporte"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Residuo/Lista": {
       "get": {
         "tags": [

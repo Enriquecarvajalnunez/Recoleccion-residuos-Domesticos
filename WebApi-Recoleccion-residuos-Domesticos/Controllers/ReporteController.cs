@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Recoleccion.Services.Implementaciones;
 using Recoleccion.Services.Interfaces;
 
 namespace WebApi_Recoleccion_residuos_Domesticos.Controllers
@@ -36,6 +37,13 @@ namespace WebApi_Recoleccion_residuos_Domesticos.Controllers
                 tipoContenido = "application/pdf",
                 nombreArchivo = $"reporte_empresa_{id}.pdf"
             });
+        }
+
+        [HttpGet("reporte-recolectas-detallado")]
+        public IActionResult ObtenerReporteRecolectasDetallado()
+        {
+            var base64Pdf = _reporteService.GenerarReporteRecolectasDetalladoEnBase64();
+            return Ok(base64Pdf);
         }
 
 

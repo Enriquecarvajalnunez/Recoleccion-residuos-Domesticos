@@ -1,4 +1,5 @@
 ﻿using Recoleccion.Models;
+using Recoleccion.Models.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace Recoleccion.AccesoDatos.Data.Repository.IRepository
     public interface IRecolectarRepository : IRepository<Recolectar>
     {
         void Update(Recolectar recolectar);
+        List<RecolectarReporteDto> ObtenerReporteRecolectasDetallado();
 
     }
 }

@@ -144,6 +144,59 @@ namespace Recoleccion.Services.Implementaciones
             }
         }
 
+        public string GenerarReporteRecolectasDetalladoEnBase64()
+        {
+            var datos = _contenedorTrabajo.Recolectar.ObtenerReporteRecolectasDetallado();
+
+            using var ms = new MemoryStream();
+            var writer = new PdfWriter(ms);
+            var pdf = new PdfDocument(writer);
+            var document = new Document(pdf);
+
+            var titulo = new Paragraph("CLEAN ENVIRONMENT")
+                .SetTextAlignment(TextAlignment.CENTER)
+                .SetFontSize(20)
+                .SetFont(PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD));
+            document.Add(titulo);
+
+            var subtitulo = new Paragraph("REPORTE DETALLADO DE RECOLECTAS")
+                .SetTextAlignment(TextAlignment.CENTER)
+                .SetFontSize(14)
+                .SetFont(PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD));            
+                //.SetMarginBottom(20);
+            document.Add(subtitulo);
+
+            Table tabla = new Table(UnitValue.CreatePercentArray(8)).UseAllAvailableWidth();
+            tabla.AddHeaderCell("ID");
+            tabla.AddHeaderCell("Fecha");
+            tabla.AddHeaderCell("Peso (Kg)");
+            tabla.AddHeaderCell("Estado");
+            tabla.AddHeaderCell("Tipo Residuo");
+            tabla.AddHeaderCell("Usuario");
+            tabla.AddHeaderCell("Localidad");
+            tabla.AddHeaderCell("Email");
+
+            foreach (var item in datos)
+            {
+                tabla.AddCell(item.IDRecoleccion.ToString());
+                tabla.AddCell(item.FechaRecoleccion.ToString("yyyy-MM-dd"));
+                tabla.AddCell(item.PesoKg.ToString("F2"));
+                tabla.AddCell(item.Estado);
+                tabla.AddCell(item.TipoResiduo);
+                tabla.AddCell($"{item.Nombre} {item.Apellidos}");
+                tabla.AddCell(item.Localidad);
+                tabla.AddCell(item.Email);
+            }
+
+            document.Add(tabla);
+
+            document.Add(new Paragraph($"\nGenerado el: {DateTime.Now:yyyy-MM-dd HH:mm:ss}")
+                .SetTextAlignment(TextAlignment.RIGHT)
+                .SetFontSize(10));
+
+            document.Close();
+            return Convert.ToBase64String(ms.ToArray());
+        }
 
     }
 }
