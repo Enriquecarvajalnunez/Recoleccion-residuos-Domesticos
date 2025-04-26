@@ -46,6 +46,12 @@ namespace WebApi_Recoleccion_residuos_Domesticos.Controllers
             return Ok(base64Pdf);
         }
 
+        [HttpGet("ObtenerReporteUsuariosPuntos")]
+        public IActionResult ObtenerReporteUsuariosPuntos()
+        {
+            var base64Pdf = _reporteService.GenerarReporteUsuariosPuntosEnBase64();
+            return Ok(base64Pdf);
+        }
 
 
     }

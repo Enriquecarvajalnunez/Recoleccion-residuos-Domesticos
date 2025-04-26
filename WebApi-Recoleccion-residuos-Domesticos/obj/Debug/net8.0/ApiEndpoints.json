@@ -433,6 +433,16 @@
   },
   {
     "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.ReporteController",
+    "Method": "ObtenerReporteUsuariosPuntos",
+    "RelativePath": "api/Reporte/ObtenerReporteUsuariosPuntos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi_Recoleccion_residuos_Domesticos.Controllers.ReporteController",
     "Method": "ObtenerReporteRecolectasDetallado",
     "RelativePath": "api/Reporte/reporte-recolectas-detallado",
     "HttpMethod": "GET",

@@ -13,6 +13,7 @@ namespace Recoleccion.AccesoDatos.Data.Repository.IRepository
     {
         void Update(Recolectar recolectar);
         List<RecolectarReporteDto> ObtenerReporteRecolectasDetallado();
+        List<UsuariosPuntosReporteDto> ObtenerReporteUsuariosPuntos();
 
     }
 }

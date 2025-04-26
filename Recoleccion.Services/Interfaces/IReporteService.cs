@@ -12,5 +12,6 @@ namespace Recoleccion.Services.Interfaces
         string GenerarReporteEmpresasEnBase64();
         string GenerarReporteEmpresaPorIdEnBase64(int id);
         string GenerarReporteRecolectasDetalladoEnBase64();
+        string GenerarReporteUsuariosPuntosEnBase64();
     }
 }

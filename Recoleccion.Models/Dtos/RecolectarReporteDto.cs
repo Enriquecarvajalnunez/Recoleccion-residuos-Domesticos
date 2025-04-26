@@ -23,6 +23,8 @@ namespace Recoleccion.Models.Dtos
         public string? Email { get; set; } = null!;
         public string? Direccion { get; set; } = null!;
         public string? Rol { get; set; } = null!;
-        public string Localidad { get; set; } = null!;
+        public string? Localidad { get; set; } = null!;
+        public decimal TotalPorTipoResiduo { get; set; }
+
     }
 }

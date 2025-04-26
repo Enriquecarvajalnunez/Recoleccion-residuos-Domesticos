@@ -13,6 +13,8 @@ using Recoleccion.AccesoDatos.Data;
 using Recoleccion.AccesoDatos.Data.Repository;
 using Recoleccion.AccesoDatos.Data.Repository.IRepository;
 using Recoleccion.Services.Interfaces;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using PdfTable = iText.Layout.Element.Table;
 
 namespace Recoleccion.Services.Implementaciones
 {
@@ -53,7 +55,7 @@ namespace Recoleccion.Services.Implementaciones
                 document.Add(new Paragraph("\n"));
 
                 // Definir tabla
-                Table tabla = new Table(new float[] { 1, 3, 3 }).UseAllAvailableWidth();
+                PdfTable tabla = new PdfTable(new float[] { 1, 3, 3 }).UseAllAvailableWidth();
 
                 // Encabezados               
                 tabla.AddHeaderCell("Nombre");
@@ -118,7 +120,7 @@ namespace Recoleccion.Services.Implementaciones
                 else
                 {
                     // Crear tabla
-                    Table tabla = new Table(new float[] { 1, 3, 3 }).UseAllAvailableWidth();                    
+                    PdfTable tabla = new PdfTable(new float[] { 1, 3, 3 }).UseAllAvailableWidth();                    
                     tabla.AddHeaderCell("Nombre");
                     tabla.AddHeaderCell("Tipo de Residuo");
 
@@ -166,8 +168,7 @@ namespace Recoleccion.Services.Implementaciones
                 //.SetMarginBottom(20);
             document.Add(subtitulo);
 
-            Table tabla = new Table(UnitValue.CreatePercentArray(8)).UseAllAvailableWidth();
-            tabla.AddHeaderCell("ID");
+            PdfTable tabla = new PdfTable(UnitValue.CreatePercentArray(8)).UseAllAvailableWidth();            
             tabla.AddHeaderCell("Fecha");
             tabla.AddHeaderCell("Peso (Kg)");
             tabla.AddHeaderCell("Estado");
@@ -175,10 +176,10 @@ namespace Recoleccion.Services.Implementaciones
             tabla.AddHeaderCell("Usuario");
             tabla.AddHeaderCell("Localidad");
             tabla.AddHeaderCell("Email");
+            tabla.AddHeaderCell("Total por Tipo de Residuo");
 
             foreach (var item in datos)
-            {
-                tabla.AddCell(item.IDRecoleccion.ToString());
+            {                
                 tabla.AddCell(item.FechaRecoleccion.ToString("yyyy-MM-dd"));
                 tabla.AddCell(item.PesoKg.ToString("F2"));
                 tabla.AddCell(item.Estado);
@@ -186,6 +187,7 @@ namespace Recoleccion.Services.Implementaciones
                 tabla.AddCell($"{item.Nombre} {item.Apellidos}");
                 tabla.AddCell(item.Localidad);
                 tabla.AddCell(item.Email);
+                tabla.AddCell(item.TotalPorTipoResiduo.ToString("0.##"));
             }
 
             document.Add(tabla);
@@ -196,6 +198,65 @@ namespace Recoleccion.Services.Implementaciones
 
             document.Close();
             return Convert.ToBase64String(ms.ToArray());
+        }
+
+        public string GenerarReporteUsuariosPuntosEnBase64()
+        {
+            var datos = _contenedorTrabajo.Recolectar.ObtenerReporteUsuariosPuntos();
+
+            using (var ms = new MemoryStream())
+            {
+                var writer = new PdfWriter(ms);
+                var pdf = new PdfDocument(writer);
+                var document = new Document(pdf);
+
+                // Título principal
+                document.Add(new Paragraph("CLEAN ENVIRONMENT")
+                    .SetTextAlignment(TextAlignment.CENTER)
+                    .SetFontSize(20)
+                    .SetFont(PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD)));    
+                    //.SetMarginBottom(10));
+
+                // Título del reporte
+                document.Add(new Paragraph("REPORTE DE USUARIOS Y PUNTOS")
+                    .SetTextAlignment(TextAlignment.CENTER)
+                    .SetFontSize(16)
+                    .SetFont(PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD)));    
+                    //.SetMarginBottom(20));
+
+                // Crear tabla
+                var table = new iText.Layout.Element.Table(6).UseAllAvailableWidth(); // 6 columnas
+
+                // Encabezados
+                table.AddHeaderCell("Estado Recolección");
+                table.AddHeaderCell("Fecha Recolección");
+                table.AddHeaderCell("Peso (Kg)");
+                table.AddHeaderCell("Nombre Usuario");
+                table.AddHeaderCell("Puntos Ganados");
+                table.AddHeaderCell("Estado Puntos");
+
+                // Datos
+                foreach (var item in datos)
+                {
+                    table.AddCell(item.EstadoRecoleccion);
+                    table.AddCell(item.FechaRecoleccion.ToString("yyyy-MM-dd"));
+                    table.AddCell(item.PesoKg.ToString("F2"));
+                    table.AddCell(item.NombreUsuario);
+                    table.AddCell(item.PuntosGanados.ToString());
+                    table.AddCell(item.EstadoPuntos);
+                }
+
+                document.Add(table);
+
+                // Fecha de generación
+                document.Add(new Paragraph($"\nGenerado el: {DateTime.Now:yyyy-MM-dd HH:mm:ss}")
+               .SetTextAlignment(TextAlignment.RIGHT)
+               .SetFontSize(10));
+
+                document.Close();
+
+                return Convert.ToBase64String(ms.ToArray());
+            }
         }
 
     }

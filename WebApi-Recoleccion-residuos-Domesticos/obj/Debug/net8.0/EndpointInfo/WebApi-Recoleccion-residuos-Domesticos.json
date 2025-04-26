@@ -724,6 +724,18 @@
         }
       }
     },
+    "/api/Reporte/ObtenerReporteUsuariosPuntos": {
+      "get": {
+        "tags": [
+          "Reporte"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Residuo/Lista": {
       "get": {
         "tags": [

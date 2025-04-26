@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Recoleccion.Models")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2e76e8981cea77b94e846a2e6934a154c50bb8db")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a9b347774384107ef468ef0061da070943013061")]
 [assembly: System.Reflection.AssemblyProductAttribute("Recoleccion.Models")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Recoleccion.Models")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
